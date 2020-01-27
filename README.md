@@ -1,4 +1,4 @@
-# poool-desk
+# vue-todolist
 
 ## Project setup
 ```
