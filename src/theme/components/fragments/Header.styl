@@ -1,0 +1,93 @@
+$header-height = 70px
+
+.head-title
+  background: $color-white
+  height: $header-height
+  line-height: $header-height
+  margin-bottom: 30px
+  padding: 0 40px
+  position: relative
+  z-index: 10
+
+  @media $dark
+    background: $color-tuna
+    color: $color-iron
+
+  h4.project-title
+    color: $color-bittersweet
+    font-size: 14px
+    font-weight: normal
+    line-height: $header-height
+    margin: 0
+
+  ul.header-menu
+    list-style: none
+    padding: 0
+
+    li.header-menu-item
+      display: inline-block
+      font-size: 12px
+      padding: 0 25px
+      position: relative
+
+      &.open
+        a.locale-menu-toggle, a.app-menu-toggle
+          color: $color-bittersweet
+
+          &:after
+            background: $color-bittersweet
+            transform: translateY(0)
+
+      > a
+        border-radius: 0
+        color: $color-shuttle-gray
+        cursor: pointer
+        font-weight: normal
+        position: relative
+        transition: color .2s ease-out
+
+        @media $dark
+          color: $color-iron
+
+        &:after
+          bottom: -8px
+          content: ""
+          left: 0
+          height: 2px
+          pointer-events: none
+          position: absolute
+          transform: translateY(3px)
+          transition: transform .1s ease-out, background .1s ease-out
+          width: 100%
+
+        &:hover
+          color: $color-bittersweet
+
+          &:after
+            background: $color-bittersweet
+            transform: translateY(0)
+
+        > span
+          margin-right: 10px
+
+        > i.material-icons
+          font-size: 18px
+          position: relative
+          top: -2px
+          vertical-align: middle
+
+      ul.locale-menu, ul.apps-menu
+        line-height: initial
+
+        &.apps-menu
+          width: 250px
+
+        li.search
+          padding: 0 20px
+
+          input
+            margin-bottom: 20px
+            margin-top: 30px
+
+        li.item
+          cursor: pointer

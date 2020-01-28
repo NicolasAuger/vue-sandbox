@@ -1,0 +1,78 @@
+@import "../../ui/colors.styl"
+
+$menu-width = 250px
+$menu-height = 70px
+
+.main-menu
+  background: $color-white
+  box-shadow: 0 3px 15px rgba($color-black, .1)
+  height: 100vh
+  left: 0
+  overflow-x: hidden
+  position: fixed
+  top: 0
+  transition: width .3s ease-out
+  width: $menu-width
+  z-index: 100
+
+  .menu-header
+    background: $color-fancy-blue
+    height: $menu-height
+    line-height: $menu-height
+    padding: 0
+    position: relative
+    text-align: center
+
+    h1
+      color: $color-white
+      font-size: 25px
+      margin-top: 20px
+
+  .menu-content
+    margin-bottom: 50px
+    white-space: nowrap
+
+    .menu-group
+      margin: 30px auto 0
+
+    h5
+      border-bottom: 1px solid transparent
+      color: $color-fancy-blue
+      font-size: 12px
+      margin: 0 auto 20px
+      padding: 10px 20px 0
+      text-transform: uppercase
+      transition: border .8s ease-out, color .2s ease-out
+
+    ul.menu
+      list-style: none
+      padding: 0
+
+      li.menu-item
+        font-size: 14px
+
+        a
+          color: $color-shuttle-gray
+          display: block
+          height: 40px
+          line-height: 40px
+          transition: background .1s ease-out, color .1s ease-out
+
+          &:hover
+            background: $color-tuft-bush
+            color: $color-shuttle-gray
+            text-transform: none
+
+          &.active, &.active:hover
+            background: $color-fade-blue
+            color: $color-midnight
+            font-weight: normal
+
+        i.material-icons
+          color: $color-fancy-blue
+          font-size: 25px
+          margin: 0px 20px
+          position: relative
+          top: 7px
+          text-align: center
+          width: 35px

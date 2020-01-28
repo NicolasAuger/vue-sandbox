@@ -13,6 +13,7 @@ const router = new VueRouter({
 });
 
 new Vue({
+  el: '#root',
   router,
   render: h => h(App),
-}).$mount('#root');
+});
