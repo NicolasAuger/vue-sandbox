@@ -1,7 +1,6 @@
 {
-    "extends": "fbjs",
-    "plugins": [
-        "react"
+    "extends": [
+      'plugin:vue/recommended'
     ],
     "rules": {
       "max-len": ["warn", { "code": 80, "tabWidth": 2, "ignorePattern": "^import [^,]+ from" }],
