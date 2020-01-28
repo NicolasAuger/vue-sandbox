@@ -1,5 +1,5 @@
 <template>
-  <div class="page desk">
+  <div class="page camera">
     <div class="row">
       <div class="col col-12">
         <BreadCrumb
@@ -28,11 +28,11 @@ import PageTitle from './fragments/PageTitle.vue'
 const constraints = { video: { facingMode: "user" }, audio: false }
 
 export default {
-  name: 'Desk',
+  name: 'Camera',
   data() {
     return {
-      breadCrumb: ['Home', 'Desk'],
-      pageTitle: 'Desk',
+      breadCrumb: ['Home', 'Camera'],
+      pageTitle: 'Camera',
       pageIcon: 'web',
     }
   },
@@ -58,10 +58,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-#camera, #camera-view
-  height: auto
-  object-fit: cover
+.camera
 
-#camera-view
-  transform: scaleX(-1)
+  #camera, #camera-view
+    height: auto
+    object-fit: cover
+
+  #camera-view
+    transform: scaleX(-1)
 </style>
