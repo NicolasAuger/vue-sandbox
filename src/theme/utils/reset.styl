@@ -1,0 +1,76 @@
+*
+  outline: none !important
+
+body
+  background-color: $color-white
+  font-family: "Avenir", "Open Sans","Helvetica", sans-serif
+  font-size: 14px
+  color: #2c3e50
+  min-height: 100vh
+  -webkit-font-smoothing: auto
+
+  .container
+    width: 970px
+
+  .jqstooltip
+    width: auto !important
+    height: auto !important
+
+  a, a:active, a:visited
+    cursor: pointer
+    color: $color-fancy-blue
+    text-decoration: none !important
+    transition: color .2s ease-out
+
+    &:hover
+      color: $color-dark-blue
+
+    &.disabled
+      pointer-events: none
+      cursor: default
+      color: $color-fade-blue
+
+  // .main-loader
+  //   width: 100vw
+  //   height: 100vh
+  //   background: $color-white
+  //   position: fixed
+  //   top: 0
+  //   left: 0
+  //   opacity: 0
+  //   transition: opacity .3s ease-out
+  //   z-index: 100000 !important
+  //   pointer-events: none
+  //   visibility: visible !important
+  //
+  //   @media $dark
+  //     background: $color-shark
+  //
+  //   &.visible
+  //    opacity: 1
+  //    pointer-events: initial
+  //
+  //   img
+  //    opacity: .2
+  //    display: block
+  //    margin-bottom: 30px
+  //
+  //   .ui-loader
+  //    opacity: .2
+
+.link
+  cursor: pointer
+
+.signin
+  .main-container
+    margin-left: 0px
+
+  .container-fluid
+    padding: 0
+
+.main-container
+  margin-left: 250px
+  min-height: 100%
+  position: relative
+  transition: margin .3s ease-out
+  width: auto
