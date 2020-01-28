@@ -1,12 +1,24 @@
 <template>
   <div id="app">
-  <h1>Welcome to Poool Desk : VueJs Test App!</h1>
-  <p>
-    <router-link to="/">Go to Desk</router-link>
-    <router-link to="/todos">Go to Todolist</router-link>
-  </p>
-  <router-view></router-view>
-</div>
+    <div className="container-fluid main-container">
+      <Menu />
+      <Header />
+      <div class="container">
+        <router-view></router-view>
+      </div>
+    </div>
+  </div>
 </template>
+
+<script>
+  import Header from './fragments/Header'
+  import Menu from './fragments/Menu'
+
+  export default {
+    components: {
+      Header, Menu
+    }
+  }
+</script>
 
 <style src="../theme/index.styl"></style>
