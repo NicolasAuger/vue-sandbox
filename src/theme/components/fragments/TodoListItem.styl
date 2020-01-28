@@ -1,9 +1,21 @@
-.todolist-item
-  width: fit-content
+@import "~bootstrap/dist/css/bootstrap.min.css"
 
-  i
-    font-size: 18px
-    margin-left: 5px
-    position: relative
-    top: -3px
-    vertical-align: middle
+.todolist-item
+
+  .item-inner
+    display: flex
+    align-items: center
+    margin: 15px 0
+
+    .text
+      margin-right: 10px
+
+    i
+      font-size: 16px
+      margin-left: 5px
+      position: relative
+      top: -1px
+      vertical-align: middle
+
+      &:hover
+        cursor: pointer

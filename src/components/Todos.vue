@@ -56,14 +56,20 @@ export default {
       pageTitle: 'TodoList',
       pageIcon: 'assignment_turned_in',
       newTodoDesc: '',
-      todos: [],
+      todos: [{
+        id: 0,
+        text: 'Improve VueJs skills'
+      }, {
+        id: 1,
+        text: 'Buy maniques at Decathlon for gym'
+      }],
     }
   },
   methods: {
     addTodo() {
       if (this.newTodoDesc) {
-        this.todos.push({
-          id: nextTodoId++,
+        this.todos.unshift({
+          id: this.todos.length + 1,
           text: this.newTodoDesc,
         })
         this.newTodoDesc = ''
