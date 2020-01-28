@@ -1,7 +1,11 @@
 <template>
   <li class="todolist-item">
     <div class="item-inner">
-      <div v-if="!edition" class="text">
+      <div
+        v-if="!edition"
+        class="text"
+        v-bind:class="{ done: isDone }"
+      >
         {{ todo.text }}
       </div>
 
@@ -18,6 +22,14 @@
           @keydown.enter="edit"
         />
       </div>
+
+      <i
+        class="material-icons"
+        @click="toggleDone"
+      >
+        {{ isDone ? 'highlight_off' : 'check_circle_outline' }}
+      </i>
+
       <i
         class="material-icons"
         @click="$emit('remove', todo.id)"
@@ -36,7 +48,12 @@ export default {
   data () {
     return {
       edition: false,
-      textEdited: this.todo.text
+      textEdited: this.todo.text,
+    }
+  },
+  computed: {
+    isDone() {
+      return this.todo.done || false
     }
   },
   methods: {
@@ -46,6 +63,9 @@ export default {
     edit() {
       this.todo.text = this.textEdited
       this.edition = false
+    },
+    toggleDone() {
+      this.todo.done = !this.todo.done
     }
   },
   props: {

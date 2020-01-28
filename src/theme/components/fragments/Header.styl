@@ -1,3 +1,5 @@
+@import "../../ui/colors.styl"
+
 $header-height = 70px
 
 .head-title
@@ -9,12 +11,8 @@ $header-height = 70px
   position: relative
   z-index: 10
 
-  @media $dark
-    background: $color-tuna
-    color: $color-iron
-
   h4.project-title
-    color: $color-bittersweet
+    color: $color-fancy-blue
     font-size: 14px
     font-weight: normal
     line-height: $header-height
@@ -32,10 +30,10 @@ $header-height = 70px
 
       &.open
         a.locale-menu-toggle, a.app-menu-toggle
-          color: $color-bittersweet
+          color: $color-fancy-blue
 
           &:after
-            background: $color-bittersweet
+            background: $color-fancy-blue
             transform: translateY(0)
 
       > a
@@ -45,9 +43,6 @@ $header-height = 70px
         font-weight: normal
         position: relative
         transition: color .2s ease-out
-
-        @media $dark
-          color: $color-iron
 
         &:after
           bottom: -8px
@@ -61,10 +56,10 @@ $header-height = 70px
           width: 100%
 
         &:hover
-          color: $color-bittersweet
+          color: $color-fancy-blue
 
           &:after
-            background: $color-bittersweet
+            background: $color-fancy-blue
             transform: translateY(0)
 
         > span

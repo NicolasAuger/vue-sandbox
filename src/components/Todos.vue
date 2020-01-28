@@ -35,6 +35,22 @@
       Nothing left in the list. Add a new todo in the input above.
     </p>
 
+    <button
+      class="cleaner mt-4"
+      v-bind:class="{ disabled: allCleaned }"
+      @click="cleanAll"
+    >
+      Clean everything
+    </button>
+
+    <button
+      class="cleaner mt-4"
+      v-bind:class="{ disabled: allUncleaned }"
+      @click="uncleanAll"
+    >
+      Unclean everything
+    </button>
+
   </div>
 </template>
 
@@ -62,7 +78,20 @@ export default {
       }, {
         id: 1,
         text: 'Buy maniques at Decathlon for gym'
+      }, {
+        id: 2,
+        text: 'Start VueJs Sandbox project',
+        done: true
       }],
+    }
+  },
+  computed: {
+    allCleaned() {
+      console.log(this.todos.every(t => t.done === true));
+      return this.todos.every(t => t.done === true)
+    },
+    allUncleaned() {
+      return this.todos.every(t => t.done === false)
     }
   },
   methods: {
@@ -77,14 +106,40 @@ export default {
     },
     removeTodo(id) {
       this.todos = this.todos.filter(t => t.id !== id)
+    },
+    cleanAll() {
+      this.todos = this.todos.map(t => ({ ...t, done: true }))
+    },
+    uncleanAll() {
+      this.todos = this.todos.map(t => ({ ...t, done: false }))
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
+@import "../theme/ui/colors.styl"
+
 .page.todolist
   ul
     margin-top: 20px
     list-style: circle
+
+  .cleaner
+    background: $color-fancy-blue
+    border: none
+    border-radius: 2px
+    color: $color-white
+    padding: 5px 10px
+    transition: all .25s ease
+
+    &.disabled
+      background: rgba($color-fade-blue, .7)
+      pointer-events: none
+
+      &:hover
+        cursor: not-allowed
+
+    &:hover
+      background: $color-dark-blue
 </style>
