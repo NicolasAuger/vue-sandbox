@@ -8,9 +8,9 @@ export const menus = [
         icon: 'assignment_turned_in',
       },
       {
-        name: 'Desk',
-        route: '/desk',
-        icon: 'web',
+        name: 'Camera',
+        route: '/camera',
+        icon: 'camera',
       },
     ],
   },

@@ -33,7 +33,7 @@ export default {
     return {
       breadCrumb: ['Home', 'Camera'],
       pageTitle: 'Camera',
-      pageIcon: 'web',
+      pageIcon: 'camera',
     }
   },
   methods: {
