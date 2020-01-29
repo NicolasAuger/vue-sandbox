@@ -12,6 +12,11 @@ export const menus = [
         route: '/camera',
         icon: 'camera',
       },
+      {
+        name: 'JsonPlaceholder',
+        route: '/jsonp',
+        icon: 'picture_in_picture',
+      },
     ],
   },
 ];
