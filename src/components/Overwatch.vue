@@ -69,7 +69,6 @@ export default {
   methods: {
     async retrieveProfile() {
       const profile = await getProfile('Mahito-21973')
-      console.log({ profile })
       this.profile = profile
       this.loading = false
     },
