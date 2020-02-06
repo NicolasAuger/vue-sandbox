@@ -83,7 +83,7 @@ module.exports = env => {
         devServer: {
           contentBase: './dist',
           port: 9200,
-          host: 'vue-todolist.local',
+          host: 'vue-sandbox.local',
           historyApiFallback: true,
         },
         plugins: [
