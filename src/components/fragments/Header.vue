@@ -1,7 +1,7 @@
 <template>
   <div class="row justify-content-between head-title">
     <div class="col-auto">
-      <h4 class="project-title">VueJS TodoList</h4>
+      <h4 class="project-title">VueJS Sandbox</h4>
     </div>
     <div class="col-auto">
       <ul class="header-menu">

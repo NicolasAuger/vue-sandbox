@@ -17,6 +17,11 @@ export const menus = [
         route: '/jsonp',
         icon: 'picture_in_picture',
       },
+      {
+        name: 'Overwatch',
+        route: '/overwatch',
+        icon: 'videogame_asset',
+      },
     ],
   },
 ];
