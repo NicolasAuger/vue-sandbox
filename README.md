@@ -1,4 +1,4 @@
-# vue-todolist
+# vue-sandbox
 
 ## Project setup
 ```
