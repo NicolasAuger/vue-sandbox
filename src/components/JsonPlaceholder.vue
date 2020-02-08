@@ -95,6 +95,7 @@ export default {
     albumSelected(e) {
       const selectedId = e.target.selectedIndex;
       this.selectedId = selectedId !== 0 ? selectedId : null;
+      this.offset = 0
     },
     previousPage() {
       this.offset = this.offset - 12
