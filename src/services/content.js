@@ -22,6 +22,11 @@ export const menus = [
         route: '/overwatch',
         icon: 'videogame_asset',
       },
+      {
+        name: 'VueX',
+        route: '/vuex',
+        icon: 'polymer',
+      },
     ],
   },
 ];
