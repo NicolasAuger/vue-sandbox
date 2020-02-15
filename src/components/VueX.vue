@@ -37,6 +37,7 @@ export default {
 @import "../theme/ui/colors.styl"
 
 .vuex
+  color: $color-midnight
   font-size: 14px
 
 </style>
