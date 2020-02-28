@@ -42,3 +42,42 @@ $color-monza = #D0021B
 $color-disabled-monza = #EA959C
 
 
+$stylings = {
+  default: {
+    textDefault: $color-black,
+    textHover: $color-black,
+    textActive: $color-black,
+    textDisabled: $color-alto,
+    default: $color-white,
+    hover: $color-white - 10,
+    active: $color-white - 20,
+    disabled: $color-alabaster
+  },
+  primary: {
+    'theme-none': {
+      default: $color-shuttle-gray,
+      hover: $color-shuttle-gray - 10,
+      active: $color-shuttle-gray - 20,
+      disabled: $color-alabaster
+    },
+    'theme-default': {
+      default: $color-fancy-blue,
+      hover: $color-dark-blue,
+      active: $color-fade-blue,
+      focus: $color-fade-blue,
+      disabled: $color-ice-blue
+    },
+  },
+  success: {
+    default: $color-java,
+    disabled: $color-disabled-java
+  },
+  warning: {
+    default: $color-buttercup,
+    disabled: $color-disabled-buttercup
+  },
+  danger: {
+    default: $color-monza,
+    disabled: $color-disabled-monza
+  },
+}
