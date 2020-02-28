@@ -28,5 +28,14 @@ export const menus = [
         icon: 'polymer',
       },
     ],
+  }, {
+    name: 'Components',
+    menu: [
+      {
+        name: 'Buttons',
+        route: '/components/buttons',
+        icon: 'play_for_work',
+      },
+    ],
   },
 ];
