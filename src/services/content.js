@@ -36,6 +36,11 @@ export const menus = [
         route: '/components/buttons',
         icon: 'play_for_work',
       },
+      {
+        name: 'CheckBoxes',
+        route: '/components/checkboxes',
+        icon: 'check',
+      },
     ],
   },
 ];
