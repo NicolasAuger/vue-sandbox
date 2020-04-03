@@ -4,6 +4,7 @@ import JsonPlaceholder from './components/JsonPlaceholder.vue';
 import Overwatch from './components/Overwatch.vue';
 import VueX from './components/VueX.vue';
 import Buttons from './components/Buttons.vue';
+import CheckBoxes from './components/CheckBoxes.vue';
 
 export const routes = [
   { path: '/', component: Todos },
@@ -12,5 +13,6 @@ export const routes = [
   { path: '/overwatch', component: Overwatch },
   { path: '/vuex', component: VueX },
   { path: '/components/buttons', component: Buttons },
+  { path: '/components/checkboxes', component: CheckBoxes },
   { path: '*', redirect: '/' },
 ];
