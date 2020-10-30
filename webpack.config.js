@@ -84,6 +84,8 @@ module.exports = env => {
           contentBase: './dist',
           port: 9200,
           host: 'vue-sandbox.local',
+          open: true,
+          hot: true,
           historyApiFallback: true,
         },
         plugins: [
