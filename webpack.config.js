@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
-// const autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -13,7 +13,11 @@ module.exports = env => {
     entry: './src/index.js',
     resolve: {
       alias: {
-        'vue$': 'vue/dist/vue.esm.js'
+        'vue$': 'vue/dist/vue.esm.js',
+        'asn1.js': require.resolve('asn1.js/'),
+        buffer: require.resolve('buffer/'),
+        crypto: require.resolve('crypto-browserify/'),
+        stream: require.resolve('stream-browserify/'),
       },
       extensions: ['*', '.js', '.vue', '.json']
     },
@@ -21,6 +25,11 @@ module.exports = env => {
       rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
+        options: {
+          loaders: {
+            css: 'stylus-loader',
+          }
+        }
       }, {
         test: /\.js/,
         exclude: /node_modules/,
@@ -29,10 +38,19 @@ module.exports = env => {
         test: /\.(eot|ttf|woff|woff2)$/,
         use: ['file-loader'],
       }, {
-        test: /\.styl|css$/,
+        test: /\.(styl|css)$/,
         use: [
           'vue-style-loader',
           'css-loader',
+          // {
+          //   loader: 'postcss-loader',
+          //   options: {
+          //     postcssOptions: {
+          //       sourceMap: true,
+          //       plugins: [autoprefixer],
+          //     },
+          //   },
+          // },
           'stylus-loader',
         ],
       }, {
@@ -63,29 +81,33 @@ module.exports = env => {
       }),
       new CleanWebpackPlugin(),
       new webpack.DefinePlugin({
+        'process.browser': JSON.stringify(process.browser),
+        'process.version': JSON.stringify(process.version),
         'process.env.ENV':
           JSON.stringify(process.env.RUN_ENV || 'development'),
       }),
     ],
     output: {
       path: path.join(__dirname, 'dist'),
-      filename: 'bundle.[hash].js',
-      sourceMapFilename: 'bundle.[hash].js.map',
+      filename: 'bundle.[fullhash].js',
+      sourceMapFilename: 'bundle.[fullhash].js.map',
+      publicPath: '/',
     },
   };
 
-  switch (env.BUILD_ENV) {
+  switch (process.env.NODE_ENV) {
     case 'development':
       config = {
         ...config,
-        devtool: 'source-map',
+        devtool: 'inline-source-map',
         mode: 'development',
         devServer: {
           contentBase: './dist',
           port: 9200,
-          host: 'vue-sandbox.local',
+          host: 'vue-sandbox.poool.develop',
           open: true,
           hot: true,
+          quiet: true,
           historyApiFallback: true,
         },
         plugins: [
@@ -105,7 +127,6 @@ module.exports = env => {
           minimizer: [
             new TerserPlugin({
               parallel: true,
-              sourceMap: true,
               terserOptions: {
                 output: {
                   comments: false,

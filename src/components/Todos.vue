@@ -117,29 +117,5 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-@import "../theme/ui/colors.styl"
+<style src="../theme/components/Todos.styl" scoped></style>
 
-.page.todolist
-  ul
-    margin-top: 20px
-    list-style: circle
-
-  .cleaner
-    background: $color-fancy-blue
-    border: none
-    border-radius: 2px
-    color: $color-white
-    padding: 5px 10px
-    transition: all .25s ease
-
-    &.disabled
-      background: rgba($color-fade-blue, .7)
-      pointer-events: none
-
-      &:hover
-        cursor: not-allowed
-
-    &:hover
-      background: $color-dark-blue
-</style>

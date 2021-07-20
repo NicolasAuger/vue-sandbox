@@ -26,20 +26,5 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-@import "../../theme/ui/colors.styl"
+<style src="../../theme/components/fragments/PageTitle.styl" scoped></style>
 
-h2.ui-page-title
-  color: $color-midnight
-  font-size: 36px
-  font-weight: normal
-  margin-bottom: 20px
-  margin-top: 10px
-
-  i
-    margin-right: 5px
-    width: 50px
-
-  span
-    margin-right: 20px
-</style>

@@ -57,13 +57,5 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.camera
+<style src="../theme/components/Camera.styl" scoped></style>
 
-  #camera, #camera-view
-    height: auto
-    object-fit: cover
-
-  #camera-view
-    transform: scaleX(-1)
-</style>

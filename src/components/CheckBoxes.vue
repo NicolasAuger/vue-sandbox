@@ -14,7 +14,7 @@
       </div>
     </div>
 
-    <div class="row mt-5">
+    <!-- <div class="row mt-5">
       <div class="col col-12">
         <CheckBox>
           This is a checkbox
@@ -26,14 +26,14 @@
           This is an unthemed checkbox
         </CheckBox>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import BreadCrumb from './fragments/BreadCrumb.vue'
 import PageTitle from './fragments/PageTitle.vue'
-import CheckBox from './elements/CheckBox.vue'
+// import CheckBox from './elements/CheckBox.vue'
 
 export default {
   name: 'CheckBoxes',
@@ -44,8 +44,6 @@ export default {
       pageIcon: 'check',
     }
   },
-  components: { BreadCrumb, CheckBoxes, PageTitle },
+  components: { BreadCrumb, PageTitle },
 }
 </script>
-
-<style lang="stylus" scoped></style>

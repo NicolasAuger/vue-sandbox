@@ -1,12 +1,12 @@
 <template>
   <component
-    class="vs-component vs-button"
-    v-bind:class="[{ disabled, reversed }, className, 'size-' + size, 'theme-' + theme, type]"
     :is="tag"
+    v-bind:class="[{ disabled, reversed }, className, 'size-' + size, 'theme-' + theme, type]"
+    class="vs-component vs-button"
     :type="submit ? 'submit' : tag === 'button' ? 'button' : null"
     :disabled="disabled"
-    @click="handleClick"
     v-bind="rest"
+    @click="handleClick"
   >
     <slot />
 </component>

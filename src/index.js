@@ -4,6 +4,10 @@ import VueRouter from 'vue-router';
 import { routes } from './routes';
 
 import App from './components/App.vue';
+import './services/polyfills';
+
+import '../node_modules/bootstrap/dist/css/bootstrap.css';
+// import './theme/index.styl';
 
 Vue.use(VueRouter);
 
